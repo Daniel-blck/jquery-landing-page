@@ -3,27 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jQuery</title>
     <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 </head>
 <body>
-    <form id = "comments-form" autoComplete="off">
-        <input type="text" id="name" placeholder="Comment">
-        <textarea id="comment" placeholder="Comment Text"></textarea>
-        <div id="error"></div>
-        <button type="button">Submit</button>
-    </form>
+    <header>
+        <span class="logo">Washoo</span>
+        <div class="nav">
+            <a href="#">Main</a>
+            <a href="#">About company</a>
+            <a href="#">Service</a>
+        </div>
+        <span class="menu" id="show-menu">
+            <i class="fa-solid fa-bars"></i>
 
-    <section class="comments">
-        <h3>Comments (<span class="count-com">0</span>)</h3>
-        <div id="comments">
-            NO COMMENTS
+
+        </span>
+    </header>
+
+    <div id="hidden-menu">
+        <span class="close">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h2>Site's menu</h2>
+        <ul>
+            <li><a href="#">Main</a></li>
+            <li><a href="#">About company</a></li>
+            <li><a href="#">Service</a></li>
+        </ul>
+    </div>
+
+    <section class="full-page">
+        <h1>Washoo - comfort for everyone</h1>
+        <h3>fast, light, comfortable</h3>
+        <button>Find out more <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <section class="features">
+        <div> 
+            <img src="img/fast-icon.png" alt="">
+            <h4>Fast</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+         <div> 
+            <img src="img/cool-icon.png" alt="">
+            <h4>Cool</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+         <div> 
+            <img src="img/light-icon.png" alt="">
+            <h4>Light</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
     </section>
 
+    <!-- Slider main container -->
+    <div class="swiper">
+    <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/3.jpg" alt="">
+            </div>
+        </div>
 
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
+    </div>
 
+    <section class="bg-fixed">
+        <h3>Subscribe</h3>
+        <input type="email" placeholder="Your email">
+        <button>Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+
+    <footer> 
+        <div class="up-btn">
+            <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <p>Vse prava pod z &copy;</p>
+        <div class="social">
+            <div><i class="fa-brands fa-youtube"></i></div>
+            <div><i class="fa-brands fa-facebook"></i></div>
+            <div><i class="fa-brands fa-instagram"></i></div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0-rc.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

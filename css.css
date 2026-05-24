@@ -1,82 +1,282 @@
-* {
+ @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
     margin: 0;
     padding: 0;
     outline: none;
 }
 
-body {
-    background: #fafafa;
+ body {
+    font-family: "Montserrat",sans-serif;
+    background-color: #fafafa;
+    font-size: 16px;
+    font-weight: 400;
+ }
+
+ a {
+    text-decoration: none;
+    transition: color 600ms ease;
+ }
+
+
+ img{
+    max-width: 100%;
+ }
+
+
+ /*header*/
+
+ header{
+    width: 90%;
+    padding: 20px 5%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+ }
+
+
+ header > .logo{
+    font-size: 25px;
+    font-weight: 700;
+ }
+
+
+ header > .nav{
+    position: relative;
+    position: -50px;
+ }
+
+ header > .nav a{
+    margin: 0 15px;
+    display: inline-block;
+    color: #a3a3a3;
+ }
+
+header > .nav a:hover,
+header > .menu:hover{
+    color: #4f4e4e
 }
 
-#comments-form,
-.comments {
-    width: 400px;
-    margin: 50px auto;
+header > .menu{
+    cursor: pointer;
+    color: #a3a3a3;
+    font-size: 23px;
 }
 
-#comments-form input,
-#comments-form textarea{
-    width: 100%;
+
+.fixed-header{
+    position: sticky;
+    top:0;
+    left: 0;
+    border-bottom:2px solid silver;
+}
+
+
+#hidden-menu{
+    width: 300px;
+    position: fixed;
+    top:0;
+    right: -300px;
+    height: 100vh;
+    background: #fff;
+    text-align: center;
+    z-index: 10000;
+}
+
+#hidden-menu .close{
+    font-size: 30px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 600ms ease;
+}
+
+#hidden-menu .close:hover{
+    color: #ccc;
+}
+
+#hidden-menu h2{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+#hidden-menu ul{
+    list-style: none;
+}
+
+#hidden-menu ul li{
+    display: block;
     margin-bottom: 10px;
-    padding: 15px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
 }
 
-#comments-form textarea{
-    resize: none;
-    height: 100px;
+#hidden-menu ul li a{
+    color:#333;
+}
+#hidden-menu ul li a:hover{
+    color:#ccc;
 }
 
-#comments-form button{
+
+/*main sec*/
+
+.full-page, 
+.bg-fixed{
+    background: url('img/main-bg.jpg') no-repeat center center;
+    height: 95vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #3b3b3b;
+    text-align: center;
+    color: #fff;
+}
+
+.full-page h1{
+    padding-top: 150px;
+    font-size: 450;
+    width: 500;
+    margin: 0 auto;
+}
+
+
+.full-page h3{
+    margin: 20px 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.full-page button,
+.bg-fixed button{
+    padding: 15px 25px;
     border-radius: 5px;
     border: 0;
-    background: #e06149;
-    padding: 10px 20px;
     font-size: 14px;
+    cursor: pointer;
+    background-color: #ffc10f;
+    color: #704404;
+    font-weight: 500;
+    transition: background 600mx ease;
+}
+
+.full-page button i,
+.bg-fixed button i{
+    margin-left: 5px;
+    transition: margin 600ms ease;
+}
+
+.full-page button:hover,
+.bg-fixed button:hover{
+    background: #ff9800;
+}
+
+.full-page button:hover i,
+.bg-fixed button:hover i{
+    margin-left: 15px;
     color: #fff;
-    cursor: pointer;
-    transition: background 600ms ease;
 }
 
-#comments-form button:hover{
-    background: #333;
+.features{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 20%;
 }
 
-#error:not(:empty){
+.features > div{
+    width: 300px;
+    text-align: center;
+    margin: 50px 10px;
+}
+
+
+.features > div img{
+    width: 80px;
     margin-bottom: 10px;
-    font-size: 17px;
-    font-weight: bold;
-    color: #e06149;
 }
 
-#comments h3 {
+.features >div h4{
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 10px;
-    color: #5d5d5d;
+    color:#454545;
+
 }
 
-.comments h3 span {color: #e06149;}
+.features > div p{
+    font-weight: 200;
+}
 
-.comments .comment {
-    width: 400px;
+
+.bg-fixed{
+    height: 300px;
+    background-image: url('img/bg-fixed.jpg');
+
+}
+
+.bg-fixed h3{
+    font-size: 25px;
+    padding-top: 130px;
+    margin-bottom: 20px;
+    color:#fff
+}
+
+.bg-fixed input{
+    padding: 14px 20px;
+    width: 300px;
+    font-size: 14px;
+    border: 0;
     border-radius: 5px;
-    padding: 15px 20px;
-    margin: 20px;
-    border: 1px solid silver;
-    background: #eee;
+    background-color: #fafafa;
 }
 
-.comments .comment .delete{
-    float: right;
-    font-style: bold;
-    color:#e06149;
+footer{
+    width: 90%;
+    padding: 50px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.swiper-slide {
+    text-align: center;
+}
+
+.swiper-slide img{
+    width: 450px;
+}
+
+footer .up-btn,
+footer .social div{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: #eee;
+    border:1px solid silver;
     cursor: pointer;
+    color: #3b3b3b;
+    transition: transform 600ms ease;
 }
 
+footer .up-btn:hover,
+footer .social div:hover{
+    transform: translateY(-10px);
+}
 
-.comments .comment .delete:hover{color:#333}
-
-.comments .comment .name {font-weight: bold}
-
-.comments .comment .mess {margin-top: 10px}
+footer .social div {
+    display: inline-block;
+    margin-left: 5px;
+}

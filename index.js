@@ -1,54 +1,45 @@
-let btnForm = document.querySelector("#comments-form button");
-let countComments = 0; 
-let idComm = 0;
+$(document).scroll(function(){
+    if($(document).width() < 1024)
+        return;
 
-function delComm(id){
-        document.querySelector("#block-"+id).remove();
-
-        countComments--
-        document.querySelector(".count-com").innerHTML = countComments
-        if (countComments == 0)
-        {
-            document.querySelector("#comments").innerHTML = "NO COMMENTS"
-        }
-    }
-
-btnForm.onclick = function() {
-    let form = document.querySelector("#comments-form");
-    let name = form.name.value;
-    let comment = form.comment.value;
-
-    idComm++;
-
-    if (name.length < 4) {
-        document.querySelector("#error").innerHTML = "Length for name is too short";
-        return false;
-    } else if (comment.length < 10) {
-        document.querySelector("#error").innerHTML = "Length for comments is too short. Min 10 characters";
-        return false;
-    }
-
-    document.querySelector("#error").innerHTML = "";
-    // Здесь можно добавить логику отправки комментария
+    if ($(document).scrollTop() > $('.full-page').height() / 2)
+        $('header').addClass('fixed-header');
+    else
+        $('header').removeClass('fixed-header');
+});
 
 
-    if (countComments == 0) 
-        document.querySelector("#comments").innerHTML = ""
-    
+$('.up-btn').on('click', function(){
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
 
-    countComments++;
-    document.querySelector(".count-com").innerHTML = countComments;
+});
 
+$("#show-menu").on('click',function(){
+    $('#hidden-menu').animate({
+        "right":0
+    }, 500);
+});
 
-    let newComment = "<div class = 'comment' id='block-"+ idComm + "'>" + "<span class='delete' onclick='delComm("+ idComm + ")'>&times;</span>" + "<p class='name'>"
-     + name + "</p>" + "<p class = 'mess'>" + comment + "</p>" + "</div>";
+$("#hidden-menu .close").on('click',function(){
+    $('#hidden-menu').animate({
+        "right":"-300px"
+    }, 500);
+});
 
-    document.querySelector("#comments").insertAdjacentHTML('afterbegin', newComment);
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
 
-    comment = "";
+  // If we need pagination
+ 
 
-    
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-
-
-};
+});
